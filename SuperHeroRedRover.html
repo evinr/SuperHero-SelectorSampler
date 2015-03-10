@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Super Hero Red Rover</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <!-- web font  -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,800" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
+    <!-- jQuery needs to be loaded first -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <style>
+    /* Sticky footer styles
+    -------------------------------------------------- */
+    html {
+      position: relative;
+      min-height: 100%;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+    }
+    body {
+      /* Margin bottom by footer height */
+      margin-bottom: 60px;
+      background: rgba(255,255,255,1.0);
+
+
+    }
+    .footer {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      /* Set the fixed height of the footer here */
+      height: 60px;
+      background-color: #f5f5f5;
+    }
+
+    /* Custom page CSS
+    --------------------------------------------------#ecf0f1 */
+    h1, h2, h3, h4, h5, h6, legend {
+  margin:0;
+  font-weight: 300;
+  font-family: 'Open Sans', sans-serif;
+  }
+
+  h1 {
+    font-size: 80px;
+  }
+
+  p{
+    font-family: 'Poiret One', cursive;
+    font-size: 150%;
+  }
+
+ .overlay {
+    margin-top: 50px;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: rgba(rgba(149, 165, 166,1.0));
+    z-index: -1;
+    color:#ecf0f1;
+  }
+    /* Not required for template or sticky footer method. */
+    .footer-text{
+      margin-top:20px;
+    }
+    .content {
+      margin-top: 100px;
+      margin-left: auto;
+      margin-right: auto;
+      width: 60%;
+
+    }
+    .navbar-color{
+      background-color: #16a085;
+      border: #1abc9c;
+    }
+    .navbar-inverse .navbar-brand {
+    color: #333;
+    }
+
+    .r {
+      background: url('sprites.png') no-repeat;
+    }
+
+    #super-man, #super-man2 {
+      background-position: -48px -298px ;
+      width: 113px;
+      height: 150px;
+    }
+
+    #wonder-woman, #wonder-woman2{
+      background-position: -45px -47px ;
+      width: 113px;
+      height: 150px;
+    }
+
+    #spider-man, #spider-man2{
+      background-position: -469px -46px ;
+      width: 113px;
+      height: 150px;
+    }
+
+    #thing, #thing2{
+      background-position: -246px -49px ;
+      width: 113px;
+      height: 150px;
+    }
+
+    #iron-man, #iron-man2{
+      background-position: -269px -296px ;
+      width: 113px;
+      height: 150px;
+    }
+
+    #hulk, #hulk2{
+      background-position: -495px -300px ;
+      width: 113px;
+      height: 150px;
+    }
+
+    .center-line{
+      margin-top: 25px;
+      margin-bottom: 25px;
+      height: 50px;
+      background: #16a085;
+    }
+
+    .source:hover > div, .results:hover > div{
+      opacity: 0.5;
+    }
+
+    .source:hover > div:hover, .results:hover > div:hover{
+      opacity: 1.0;
+    }
+
+    a{
+      color: #16a085
+    }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-color navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Super Hero Red Rover</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="javascript:void(0)" id="reset" onClick="resetPage()">Reset</a></li>
+            <li><a href="javascript:void(0)" id="save" onClick="savePage()">Save</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+    <!-- begin content -->
+    <div class="container text-center main-content">
+      <div class="content text-center">
+    <!-- Source Pics -->
+        <div class="source row text-center">
+          <div class="r col-sm-4" id="super-man" title="Super Man" alt="Super Man" onClick="picGrabed(this.id)"></div>
+          <div class="r col-sm-4" id="wonder-woman" title="Wonder Woman" alt="Wonder Woman" onClick="picGrabed(this.id)"></div>
+          <div class="r col-sm-4" id="spider-man" title="Spider Man" alt="Spider Man" onClick="picGrabed(this.id)"></div>
+          <div class="r col-sm-4" id="thing" title="Thing" alt="Thing" onClick="picGrabed(this.id)"></div>
+          <div class="r col-sm-4" id="iron-man" title="Iron Man" alt="Iron Man" onClick="picGrabed(this.id)"></div>
+          <div class="r col-sm-4" id="hulk" title="Hulk" alt="Hulk" onClick="picGrabed(this.id)"></div>
+        </div>
+    <!-- Center line -->
+      <div class="center-line col-md-12">
+      </div>
+    <!-- Result Pics -->
+      <div class="results">
+        <div class="display row">
+        </div>
+      </div>
+    </div>
+    </div>
+    <!-- end content -->
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.js"></script>
+    <script type="text/javascript">
+
+    var originalState = $(".content").clone();
+    var savedState = localStorage.getItem("saved");
+    if (savedState){
+      var temp = localStorage.getItem("saved");
+      $(".main-content").html(temp);
+    }
+
+    function picGrabed(clickedId) {
+      $("#" + clickedId + "").hide();
+      var alt = clickedId.replace('\-',' ');
+      var capitalized = alt.replace(/^[a-z]/, function(m){ return m.toUpperCase() });
+      var title = capitalized.replace(/\s[a-z]/, function(m){ return m.toUpperCase() });
+      $(".results").append("<div onclick='picReturned(this.id)' class='r col-sm-4' alt='" + title + "' title='" + title + "' id='" + clickedId + "2'></div>");
+    }
+
+    function capitalizeEachWord(str) {
+      return string.charAt(0).toUpperCase() + string.slice(1);
+    }
+
+    function picReturned(clickedId) {
+      var temp = new RegExp("(.*)2");
+      var usable = temp.exec(clickedId);
+      $("#" + usable[1] + "").show();
+      $("div").remove("#" + clickedId + "");
+    }
+
+    function resetPage() {
+      $(".content").replaceWith(originalState.clone());
+    }
+
+    function savePage() {
+      //Save to local storage
+      var result = $(".content").clone();
+      localStorage.setItem("saved",result[0]['outerHTML']);
+    }
+
+    </script>
+  </body>
+</html>
